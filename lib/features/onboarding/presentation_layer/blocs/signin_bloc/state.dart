@@ -6,7 +6,7 @@ class SigninState extends Equatable {
     this.password,
     this.emailError,
     this.passwordError,
-    this.hidePassword,
+    this.hidePassword
   });
 
   SigninState copyWith({
@@ -14,6 +14,7 @@ class SigninState extends Equatable {
     String? password,
     String? emailError,
     String? passwordError,
+    String? validationMessage,
     bool? hidePassword,
   }) {
     return SigninState(
@@ -42,7 +43,7 @@ class SigninState extends Equatable {
 }
 
 class LoadingState extends SigninState {
-  LoadingState({required this.isloading});
+  const LoadingState({required this.isloading});
   final bool isloading;
 
   @override
@@ -55,6 +56,8 @@ class ValidationSuccessState extends SigninState {
 }
 
 class ValidationErrorState extends SigninState {
+  const ValidationErrorState(this.validationMessage);
+  final String? validationMessage;
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [validationMessage];
 }

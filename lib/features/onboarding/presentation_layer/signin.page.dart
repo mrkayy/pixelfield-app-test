@@ -26,8 +26,32 @@ class SigninPage extends StatelessWidget {
           if (state is ValidationSuccessState) {
             context.go(Routes.collectionpage.path);
           }
-          if(state is ValidationErrorState){
-            
+          if (state is ValidationErrorState) {
+            ScaffoldMessenger.of(context)
+              ..removeCurrentSnackBar()
+              ..showSnackBar(
+                SnackBar(
+                  content: Text(
+                    state.validationMessage!,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  backgroundColor: Colors.redAccent,
+                  behavior: SnackBarBehavior.floating,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 16.r,
+                    vertical: 10.r,
+                  ),
+                  duration: const Duration(seconds: 3),
+                  elevation: 6,
+                ),
+              );
           }
         },
         builder: (context, state) {

@@ -69,7 +69,7 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
           emit(ValidationSuccessState());
           debugPrint(res.user?.email);
         } else {
-          emit(ValidationErrorState());
+          emit(ValidationErrorState(res.err?.message));
           debugPrint(res.err?.message);
         }
       }
