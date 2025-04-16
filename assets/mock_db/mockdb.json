@@ -1,0 +1,62 @@
+{
+    "data": [
+        {
+            "collection": "Genesis Collection",
+            "status": "Genuine Bottle (Unopened)",
+            "image_url": "assets/img/timeelite_bottle.png",
+            "bottle_details": {
+              "range": "135/184",
+              "name": "Talisker 18 Year old",
+              "identifier": "#2504"
+            },
+            "specifications": {
+              "distillery": "Talisker",
+              "region": "Isle of Skye",
+              "country": "Scotland",
+              "type": "Single Malt",
+              "age_statement": "18 Year old",
+              "filled": "2000-01-01",
+              "bottled": "2018-01-01",
+              "cask_number": "12345",
+              "abv": "45.8%",
+              "size": "700ml",
+              "finish": "Sherry cask finish"
+            },
+            "label": {
+              "title": "ONE CASK at a time",
+              "description": "A limited edition single malt from Talisker, aged 18 years.",
+              "attachments": [
+                "assets/svgs/image_placeholder.svg",
+                "assets/svgs/image_placeholder.svg",
+                "assets/svgs/image_placeholder.svg"
+              ]
+            },
+            "tasting_notes": {
+              "professional": {
+                "author": "Charles MacLean MBE",
+                "nose": "Rich and fruity with a hint of sea salt.",
+                "palate": "Smooth with notes of smoke and spice.",
+                "finish": "Long and warming with a touch of sweetness."
+              },
+              "user": {
+                "nose": "I detect a strong peat aroma.",
+                "palate": "Very balanced, with a peppery kick.",
+                "finish": "Lingering smoke and oak."
+              }
+            },
+            "history": [
+              {
+                "date": "2018-05-10",
+                "event": "Bottled at Talisker Distillery"
+              },
+              {
+                "date": "2020-03-15",
+                "event": "Acquired by collector"
+              }
+            ],
+            "attachments": [
+              "assets/svgs/image_placeholder.svg"
+            ]
+          }
+    ]
+}
