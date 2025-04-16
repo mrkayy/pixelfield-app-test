@@ -26,6 +26,9 @@ class SigninPage extends StatelessWidget {
           if (state is ValidationSuccessState) {
             context.go(Routes.collectionpage.path);
           }
+          if(state is ValidationErrorState){
+            
+          }
         },
         builder: (context, state) {
           return ListView(

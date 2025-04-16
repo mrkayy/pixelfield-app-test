@@ -18,17 +18,23 @@ class SigninUserUsecase {
     RequestPayload data,
   ) async {
     try {
+      var res = await apiService.userSignin(data);
       if (await connectivity.checkForConnectivity()) {
-        var res = await apiService.userSignin(data);
         if (res.err == null) {
           if (res.response!.statusCode == 200) {
             var map = SigninModel.fromJson(res.response!.data) as UserSignin;
             return (err: null, user: map);
+          } else {
+            return (
+              err: ErrorParser(res.response!.data["message"]),
+              user: null,
+            );
           }
-          return (err: null, user: null);
         }
+      } else {
+        return (err: ErrorParser("No internet connection"), user: null);
       }
-      return (err: ErrorParser("User not found"), user: null);
+      return (err: ErrorParser(res.response!.data["message"]), user: null);
     } catch (e) {
       return (err: ErrorParser("$e error"), user: null);
     }

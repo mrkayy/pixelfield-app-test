@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pixel_field_app/core/service_locator.dart';
 import 'package:pixel_field_app/features/onboarding/domain_layer/signin.usecase.dart';
@@ -60,11 +61,17 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
       );
     } else {
       if (form.validate()) {
+          emit(LoadingState(isloading: true));
         var payload = {"email": event.email, "password": event.password};
-
         final res = await usecase!.call(payload);
-
-        print(res);
+          emit(LoadingState(isloading: false));
+        if (res.err == null) {
+          emit(ValidationSuccessState());
+          debugPrint(res.user?.email);
+        } else {
+          emit(ValidationErrorState());
+          debugPrint(res.err?.message);
+        }
       }
     }
     //todo: make api call to mock_database.

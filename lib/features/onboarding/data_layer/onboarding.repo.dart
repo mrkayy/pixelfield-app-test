@@ -15,8 +15,8 @@ class OnboardingUserRepository implements OnboardingInterface {
     try {
       debugPrint("GOT _TO_API");
       final res = await getIt<MockApiServie>().fetchData(Endpoints.user);
-      debugPrint("APISPOIODASPDAS: $res");
-      for (final user in res["data"].values) {
+      for (final user in res["data"]) {
+        debugPrint("MATCHINIG__DATA: $user");
         if (user['email'] == data['email'] &&
             user['password'] == data['password']) {
           return (
@@ -33,8 +33,8 @@ class OnboardingUserRepository implements OnboardingInterface {
         err: null,
         response: Response(
           requestOptions: RequestOptions(),
-          statusCode: 200,
-          data: res,
+          statusCode: 400,
+          data: {"message": "${data["email"]} not found in local userdb.json"},
         ),
       );
     } catch (e) {

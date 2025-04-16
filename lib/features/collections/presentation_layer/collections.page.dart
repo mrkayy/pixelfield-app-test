@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pixel_field_app/core/utils/custom_image_view.dart';
 import 'package:pixel_field_app/routes.dart';
 import 'package:pixel_field_app/theme.dart';
@@ -16,9 +17,10 @@ class CollectionsPage extends StatelessWidget {
         centerTitle: false,
         title: Text(
           "My collection",
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
+          style: GoogleFonts.ebGaramond().copyWith(
             fontSize: 32.sp,
             fontWeight: FontWeight.w500,
+            color: themeColor.white,
           ),
         ),
         actionsPadding: EdgeInsets.only(right: 10.r),
@@ -62,7 +64,7 @@ class CollectionsPage extends StatelessWidget {
                   16.verticalSpace,
                   Text(
                     "Springbank",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    style: GoogleFonts.ebGaramond().copyWith(
                       color: themeColor.grey1, // Gold color
                       fontWeight: FontWeight.w600,
                       fontSize: 22.sp,
@@ -71,7 +73,7 @@ class CollectionsPage extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     "1992 #1234",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    style: GoogleFonts.ebGaramond().copyWith(
                       color: themeColor.grey1, // Gold color
                       fontWeight: FontWeight.w500,
                       fontSize: 16.sp,

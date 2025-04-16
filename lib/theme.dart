@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 AppColors get themeColor => AppColors();
@@ -68,14 +69,16 @@ final class CustomThemeData {
       style: ElevatedButton.styleFrom(
         foregroundColor: const Color(0xFF1A3A21), // Dark text/icon on button
         backgroundColor: const Color(0xFFF5C518), // Gold background
-        textStyle: GoogleFonts.roboto(
+        minimumSize: Size(343.w, 56.h),
+        textStyle: GoogleFonts.ebGaramond(
           fontSize: 16,
-          fontWeight: FontWeight.bold,
+          letterSpacing: 0.1.sp,
+          fontWeight: FontWeight.w600,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8), // Rounded corners
         ),
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         elevation: 2, // Slight elevation
       ),
     );

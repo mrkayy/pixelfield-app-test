@@ -53,3 +53,8 @@ class ValidationSuccessState extends SigninState {
   @override
   List<Object?> get props => [];
 }
+
+class ValidationErrorState extends SigninState {
+  @override
+  List<Object?> get props => [];
+}
